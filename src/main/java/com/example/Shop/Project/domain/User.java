@@ -1,21 +1,22 @@
 package com.example.Shop.Project.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+// @Entity is used to mark this class as a JPA entity (đánh dấu lớp này là một thực thể JPA)
+// @Id is used to mark the primary key of the entity (đánh dấu khóa chính của thực thể)
+@Entity
 public class User {
+    @Id
+    // Use @GeneratedValue to automatically generate the ID (tự động sinh ID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String email;
     private String fullName;
     private String password;
     private String address;
     private String phone;
-
-    // public User(long id, String fullName, String email, String password, String
-    // phone) {
-    // this.id = id;
-    // this.fullName = fullName;
-    // this.email = email;
-    // this.password = password;
-    // this.phone = phone;
-    // }
 
     public long getId() {
         return id;
